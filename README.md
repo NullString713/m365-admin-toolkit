@@ -28,3 +28,16 @@ Most scripts require the Microsoft Graph PowerShell module.
 
 ```powershell
 Install-Module Microsoft.Graph -Scope CurrentUser
+```
+
+Specific permissions are listed in each script header.
+
+## Notes
+
+These scripts are intended as practical examples and starting points. Review the code, validate required permissions, and test in a safe environment before using in production.
+
+Some Microsoft Graph properties may have licensing, permission, retention, or data availability limitations. Always validate output before making cleanup, licensing, or access decisions.
+
+## Disclaimer
+
+These scripts are provided as-is with no warranty. Use at your own risk.
