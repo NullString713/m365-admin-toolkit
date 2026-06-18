@@ -41,7 +41,11 @@ Specify a custom output path:
 ```powershell
 .\entra-id\Export-EntraUserSignInLicenseReport.ps1 -OutputPath ".\reports\EntraUserSignInLicenseReport.csv"
 ```
+## Documentation
 
+| Document | Description |
+|---|---|
+| [Microsoft Graph Sign-In Activity Notes](docs/graph-signin-activity-notes.md) | Notes on sign-in activity fields, reporting caveats, and safe cleanup decisions. |
 ## Requirements
 
 Most scripts require the Microsoft Graph PowerShell module.
