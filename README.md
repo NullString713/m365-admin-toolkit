@@ -22,6 +22,26 @@ These scripts are focused on real-world admin tasks such as tenant reporting, li
 |---|---|
 | [`Export-EntraUserSignInLicenseReport.ps1`](entra-id/Export-EntraUserSignInLicenseReport.ps1) | Exports Entra user details, assigned licenses, and sign-in activity to CSV using Microsoft Graph PowerShell. |
 
+## Usage
+
+Run the Entra user sign-in and license report:
+
+```powershell
+.\entra-id\Export-EntraUserSignInLicenseReport.ps1
+```
+
+Include manager information:
+
+```powershell
+.\entra-id\Export-EntraUserSignInLicenseReport.ps1 -IncludeManager
+```
+
+Specify a custom output path:
+
+```powershell
+.\entra-id\Export-EntraUserSignInLicenseReport.ps1 -OutputPath ".\reports\EntraUserSignInLicenseReport.csv"
+```
+
 ## Requirements
 
 Most scripts require the Microsoft Graph PowerShell module.
