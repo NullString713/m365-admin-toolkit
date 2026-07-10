@@ -22,6 +22,11 @@ These scripts are focused on real-world admin tasks such as tenant reporting, li
 |---|---|
 | [`Export-EntraUserSignInLicenseReport.ps1`](entra-id/Export-EntraUserSignInLicenseReport.ps1) | Exports Entra user details, assigned licenses, and sign-in activity to CSV using Microsoft Graph PowerShell. |
 
+### Intune
+
+| Script | Description |
+|---|---|
+| [`Update-IntuneDeploymentRings.ps1`](./intune/Update-IntuneDeploymentRings.ps1) | Populates Intune deployment ring groups using location-aware device distribution. Supports user-affinity devices, no-user-affinity device groups, corporate-owned device filtering, Azure Automation app-only authentication, and phased rollout patterns designed to reduce broad-impact endpoint change risk. |
 ## Usage
 
 Run the Entra user sign-in and license report:
@@ -41,6 +46,28 @@ Specify a custom output path:
 ```powershell
 .\entra-id\Export-EntraUserSignInLicenseReport.ps1 -OutputPath ".\reports\EntraUserSignInLicenseReport.csv"
 ```
+Run the Intune deployment ring automation:
+
+```powershell
+.\intune\Update-IntuneDeploymentRings.ps1 `
+  -TenantId "00000000-0000-0000-0000-000000000000" `
+  -ClientId "00000000-0000-0000-0000-000000000000" `
+  -ClientSecretAutomationVariableName "GraphClientSecret" `
+  -NestedUserLocationGroupIds @(
+    "11111111-1111-1111-1111-111111111111"
+  ) `
+  -DirectUserLocationGroupIds @(
+    "22222222-2222-2222-2222-222222222222"
+  ) `
+  -DirectDeviceLocationGroupIds @(
+    "33333333-3333-3333-3333-333333333333"
+  ) `
+  -DeploymentRingGroupIds @(
+    "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+    "cccccccc-cccc-cccc-cccc-cccccccccccc",
+    "dddddddd-dddd-dddd-dddd-dddddddddddd"
+  )
 ## Documentation
 
 | Document | Description |
