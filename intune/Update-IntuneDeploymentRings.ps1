@@ -75,7 +75,7 @@ Skips clearing existing device memberships from the deployment ring groups befor
   )
 
 .NOTES
-Author: Hali Scher
+Author: Hali
 Version: 1.0
 
 Designed for:
