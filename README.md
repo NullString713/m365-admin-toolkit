@@ -68,6 +68,27 @@ Run the Intune deployment ring automation:
     "cccccccc-cccc-cccc-cccc-cccccccccccc",
     "dddddddd-dddd-dddd-dddd-dddddddddddd"
   )
+```
+
+Preview changes safely with `-WhatIf`:
+
+```powershell
+.\intune\Update-IntuneDeploymentRings.ps1 `
+  -TenantId "00000000-0000-0000-0000-000000000000" `
+  -ClientId "00000000-0000-0000-0000-000000000000" `
+  -ClientSecretAutomationVariableName "GraphClientSecret" `
+  -DirectDeviceLocationGroupIds @(
+    "33333333-3333-3333-3333-333333333333"
+  ) `
+  -DeploymentRingGroupIds @(
+    "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+    "cccccccc-cccc-cccc-cccc-cccccccccccc",
+    "dddddddd-dddd-dddd-dddd-dddddddddddd"
+  ) `
+  -WhatIf
+```
+
 ## Documentation
 
 | Document | Description |
